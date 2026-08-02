@@ -1,0 +1,263 @@
+📋 INSTALLATION CHECKLIST
+=========================
+
+Follow this checklist to ensure everything is set up correctly.
+
+PRE-INSTALLATION CHECK
+======================
+□ Internet connection available? (Required for LLM API calls)
+□ At least 1GB free disk space?
+□ Administrator access (if needed)?
+□ Python 3.8+ already installed? (Check: python --version)
+
+STEP 1: INSTALL DEPENDENCIES
+============================
+Choose one method:
+
+Windows Users:
+□ Method A: Double-click setup.bat
+  OR
+□ Method B: Run in PowerShell:
+  powershell -ExecutionPolicy Bypass -File setup.ps1
+  OR
+□ Method C: Run in Command Prompt:
+  pip install -r requirements.txt
+
+Mac/Linux Users:
+□ Run in Terminal:
+  bash setup.sh
+  OR
+□ Manual:
+  pip install -r requirements.txt
+
+⏱️ Expected time: 2-5 minutes
+🎯 Signs of success:
+   - No red errors
+   - "Successfully installed" messages
+   - Script completes without crashes
+
+STEP 2: VERIFY INSTALLATION
+===========================
+Run this command to verify:
+□ python -c "from langchain_anthropic import ChatAnthropic; print('✅ OK')"
+
+Expected output:
+  ✅ OK
+
+If you see an error, go back to Step 1.
+
+STEP 3: CHECK API CREDENTIALS
+=============================
+□ .env file exists in project directory?
+  (Location: C:\...\GEN-AI-Prog-HandsOn\.env)
+
+□ .env file contains these lines?
+  - KEY=sk-zK7xMXa2pANc64xuf4oaTA
+  - BASE_URL=https://llmgw-wp.tekstac.com
+  - MODEL=global.anthropic.claude-haiku-4-5-20251001-v1:0
+
+If missing:
+1. Find .env.example in the folder
+2. Copy it and rename to .env
+3. Make sure it has the credentials above
+
+STEP 4: START JUPYTER
+====================
+Choose one method:
+
+Option A (Recommended):
+□ Open Command Prompt/Terminal
+□ Run: jupyter notebook
+□ Browser opens automatically
+□ Navigate to StateGraph_Implementation_Walkthrough.ipynb
+□ Click on it to open
+
+Option B (VS Code):
+□ Open VS Code
+□ Install "Jupyter" extension (if not already done)
+□ Open StateGraph_Implementation_Walkthrough.ipynb
+□ Select Python interpreter (top right)
+□ Click "Run All" or run cells one by one
+
+Option C (Jupyter Lab):
+□ Open Command Prompt/Terminal
+□ Run: jupyter lab
+□ Browser opens automatically
+
+STEP 5: RUN THE NOTEBOOK
+=======================
+□ Notebook is open in browser/VS Code?
+□ You can see the cells (gray boxes with code)?
+□ Kernel shows "Python 3.8+" or similar?
+
+First Cell to Run:
+□ Click first code cell
+□ Press Ctrl+Enter (or Cmd+Enter on Mac)
+□ Wait for output (watch for ✅ marks)
+
+Signs of success:
+□ Cell output shows "✅ All imports successful!"
+□ No red error boxes appear
+□ LLM initialization message appears
+
+STEP 6: TEST WITH LIVE LLM
+==========================
+□ Scroll to Section 6 (Compile and Test)
+□ Find the code cell with "Compile and Run Sequential Pipeline"
+□ Click on it
+□ Press Ctrl+Enter to run
+
+You should see:
+□ Product review is generated ✅
+□ Sentiment is classified ✅
+□ Brand reply is created ✅
+
+This means the LLM API is working!
+
+SECTION-BY-SECTION EXECUTION
+============================
+
+Section 1: Imports (2-3 seconds)
+□ Packages install automatically
+□ Shows ✅ marks for each package
+□ Shows LLM initialized message
+
+Section 2: State Definitions (instant)
+□ No output expected
+□ Defines three state types
+
+Section 3: Node Functions (instant)
+□ No output expected
+□ Defines processing functions
+
+Section 4: Build Graphs (instant)
+□ No output expected
+□ Creates workflow structures
+
+Section 5: Add Edges (instant)
+□ No output expected
+□ Connects nodes together
+
+Section 6A: Sequential Pipeline (15-30 seconds)
+□ Shows product review
+□ Shows sentiment classification (Positive/Negative/Neutral)
+□ Shows brand response
+
+Section 6B: Router Test (30-60 seconds)
+□ Answers 3 different questions
+□ Routes to science/history/general personas
+□ Shows different response styles
+
+Section 7: Multi-turn (30-60 seconds)
+□ Simulates 3-turn conversation
+□ Shows travel planning example
+□ Demonstrates state persistence
+
+TROUBLESHOOTING CHECKLIST
+=========================
+
+❌ Error: "ModuleNotFoundError: No module named 'langchain'"
+✓ Solution:
+  1. Run: pip install -r requirements.txt
+  2. Restart Jupyter
+  3. Run cell again
+
+❌ Error: "KEY not found in environment"
+✓ Solution:
+  1. Check .env file exists
+  2. Check contents: KEY=sk-zK7xMXa2pANc64xuf4oaTA
+  3. Restart Jupyter (it reads .env on startup)
+  4. Run cell again
+
+❌ Error: "Connection refused" or API timeout
+✓ Solution:
+  1. Check internet connection
+  2. Verify BASE_URL is correct
+  3. Check API key is valid
+  4. Try again (might be temporary)
+
+❌ Jupyter won't start
+✓ Solution:
+  1. Run: pip install --upgrade jupyter
+  2. Run: jupyter --version
+  3. Run: jupyter notebook again
+
+❌ Kernel keeps crashing
+✓ Solution:
+  1. Close Jupyter completely
+  2. Restart terminal/command prompt
+  3. Run: jupyter notebook
+  4. Open notebook again
+
+PERFORMANCE EXPECTATIONS
+=======================
+
+⏱️ First cell run: 5-10 seconds
+   (LLM loading)
+
+⏱️ Subsequent cells: 2-5 seconds
+   (API calls to Claude)
+
+⏱️ LLM generation: 3-15 seconds
+   (Depends on response length)
+
+If slower:
+□ Check internet speed
+□ Check if your system is loaded
+□ Try a simpler model (haiku instead of opus)
+
+FINAL CHECKLIST BEFORE PRESENTATION
+===================================
+□ All sections have run at least once
+□ No errors appear in any cells
+□ Section 6A shows review/sentiment/reply ✅
+□ Section 6B shows all 3 routed answers ✅
+□ Section 7 shows multi-turn conversation ✅
+□ .env file has correct API key
+□ Internet connection is stable
+□ Jupyter is responsive
+□ You understand the three StateGraph patterns
+
+BACKUP OPTIONS IF SOMETHING FAILS
+==================================
+If a live demo fails:
+□ Have screenshots of successful runs
+□ Have pre-recorded execution video
+□ Have output printed in documentation
+□ Show the code even if execution fails
+□ Point to Day3/Day4 example notebooks
+
+SUPPORT RESOURCES
+=================
+□ QUICK_START.md - Quick reference
+□ SETUP_GUIDE.md - Detailed installation
+□ README.md - Full documentation
+□ StateGraph_Implementation_Walkthrough.ipynb - Main content
+□ Day3/Day4/Day5 examples - Pattern references
+
+COMPLETION CHECKLIST
+====================
+✓ Dependencies installed
+✓ API credentials configured
+✓ Jupyter running
+✓ Notebook opens
+✓ First cell runs successfully
+✓ Section 6 shows LLM output
+✓ Section 7 runs multi-turn
+✓ No errors in execution
+✓ Ready to present!
+
+---
+
+Date Completed: _______________
+Time to Complete: _______________
+Any Issues Encountered: _______________
+Status: [ ] Ready to Present
+        [ ] Need More Setup
+        [ ] Troubleshooting Required
+
+---
+
+For help: Refer to SETUP_GUIDE.md or README.md
+
+Good luck with your presentation! 🚀
